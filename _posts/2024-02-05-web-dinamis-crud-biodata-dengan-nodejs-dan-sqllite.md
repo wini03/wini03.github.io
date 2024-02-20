@@ -1,22 +1,24 @@
 Tentu, berikut adalah langkah-langkah untuk membuat web dinamis biodata siswa dengan Node.js, SQLite, dan operasi CRUD (Create, Read, Update, Delete):
 
-Persiapkan Environment:
+# Persiapkan Environment:
 
-Pastikan Node.js dan npm terinstal di sistem kamu.
-Buat direktori proyek baru dan masuk ke dalamnya melalui terminal.
-Install modul-modul yang diperlukan:
-bash
+1.Pastikan Node.js dan npm terinstal di sistem kamu.
+2.Buat direktori proyek baru dan masuk ke dalamnya melalui terminal.
+3.Install modul-modul yang diperlukan:
+
 Copy code
 npm init -y
 npm install express sqlite3 ejs
-Buat Struktur Proyek:
 
-Buat file app.js untuk kode server dan direktori views untuk menyimpan file-template EJS.
-Buat file views/index.ejs untuk halaman utama.
-Kode Server:
+# Buat Struktur Proyek:
+
+1.Buat file app.js untuk kode server dan direktori views untuk menyimpan file-template EJS.
+2.Buat file views/index.ejs untuk halaman utama.
+
+# Kode Server:
 
 Dalam file app.js, tambahkan kode berikut:
-javascript
+
 Copy code
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
@@ -100,10 +102,11 @@ app.get('/delete/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-Buat Template EJS:
 
-Dalam file views/index.ejs, tambahkan kode untuk menampilkan data siswa dan formulir tambah:
-ejs
+# Buat Template EJS:
+
+1. Dalam file views/index.ejs, tambahkan kode untuk menampilkan data siswa dan formulir tambah:
+   
 Copy code
 <!DOCTYPE html>
 <html lang="en">
@@ -134,8 +137,9 @@ Copy code
   </form>
 </body>
 </html>
-Dalam file views/edit.ejs, tambahkan kode untuk formulir edit:
-ejs
+      
+2.Dalam file views/edit.ejs, tambahkan kode untuk formulir edit:
+
 Copy code
 <!DOCTYPE html>
 <html lang="en">
@@ -157,8 +161,12 @@ Copy code
   </form>
 </body>
 </html>
-Jalankan Server:
 
-Simpan semua perubahan dan jalankan server dengan perintah node app.js.
-Buka browser dan akses http://localhost:3000 untuk melihat aplikasi CRUD Biodata Siswa.
-Dengan langkah-langkah di atas, kamu seharusnya memiliki aplikasi CRUD sederhana untuk biodata siswa menggunakan Node.js, SQLite, dan EJS sebagai mesin template. Kamu dapat menambahkan
+# Jalankan Server:
+
+1.Simpan semua perubahan dan jalankan server dengan perintah node app.js.
+2.Buka browser dan akses http://localhost:3000 untuk melihat aplikasi CRUD Biodata Siswa.
+
+
+
+
