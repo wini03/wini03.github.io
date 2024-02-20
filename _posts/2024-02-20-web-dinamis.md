@@ -31,3 +31,17 @@ Jika Anda memiliki nama domain kustom, atur konfigurasi DNS untuk mengarahkannya
 
 GitHub Pages mendukung Jekyll, yang memungkinkan Anda membuat situs web statis yang lebih dinamis.
 Pelajari Jekyll jika Anda ingin menggunakan fungsionalitas dinamis tambahan.
+
+Contoh struktur direktori:
+
+
+![assets](/assets/Capture8.PNG)
+
+
+Pastikan untuk mengikuti pedoman dan aturan GitHub Pages dalam membuat dan menata proyek web Anda. Selain itu, untuk proyek web yang lebih kompleks, Anda mungkin perlu menggunakan alat manajemen paket seperti npm atau yarn untuk mengelola dependensi JavaScript dan alat pengelola tata letak seperti Sass untuk gaya yang lebih canggih.
+
+
+
+
+
+
