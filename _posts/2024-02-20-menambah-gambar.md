@@ -4,4 +4,6 @@
 3. lalu ke file post, buat format tanda ! [nama_file] (namagambar)
 4. lalu akan muncul gambar seperti berikut.
 5. contoh:
+
+   ![assets](/assets/mariaDB.PNG)
    
