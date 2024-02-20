@@ -40,4 +40,10 @@ Dalam file app.js, tambahkan kode berikut:
 
 
 
+# hasil prakteknya
+
+
+
+
+
 
