@@ -7,7 +7,9 @@ Tentu, berikut adalah langkah-langkah untuk membuat web dinamis biodata siswa de
 3.Install modul-modul yang diperlukan:
 
 Copy code
+
 npm init -y
+
 npm install express sqlite3 ejs
 
 # Buat Struktur Proyek:
@@ -18,90 +20,7 @@ npm install express sqlite3 ejs
 # Kode Server:
 
 Dalam file app.js, tambahkan kode berikut:
-
-Copy code
-const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
-const ejs = require('ejs');
-const app = express();
-const port = 3000;
-
-app.set('view engine', 'ejs');
-app.use(express.urlencoded({ extended: true }));
-
-const db = new sqlite3.Database(':memory:');
-
-db.serialize(() => {
-  db.run("CREATE TABLE IF NOT EXISTS biodata_siswa (id INTEGER PRIMARY KEY, nama TEXT, umur INTEGER, alamat TEXT)");
-});
-
-app.get('/', (req, res) => {
-  db.all('SELECT * FROM biodata_siswa', (err, rows) => {
-    if (err) {
-      console.error('Error querying database:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-    res.render('index', { siswa: rows });
-  });
-});
-
-app.post('/biodata', (req, res) => {
-  const { nama, umur, alamat } = req.body;
-  const query = 'INSERT INTO biodata_siswa (nama, umur, alamat) VALUES (?, ?, ?)';
-  
-  db.run(query, [nama, umur, alamat], function(err) {
-    if (err) {
-      console.error('Error inserting data:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-    res.redirect('/');
-  });
-});
-
-app.get('/edit/:id', (req, res) => {
-  const id = req.params.id;
-  db.get('SELECT * FROM biodata_siswa WHERE id = ?', [id], (err, row) => {
-    if (err) {
-      console.error('Error querying database:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-    res.render('edit', { siswa: row });
-  });
-});
-
-app.post('/update/:id', (req, res) => {
-  const id = req.params.id;
-  const { nama, umur, alamat } = req.body;
-  const query = 'UPDATE biodata_siswa SET nama=?, umur=?, alamat=? WHERE id=?';
-  
-  db.run(query, [nama, umur, alamat, id], function(err) {
-    if (err) {
-      console.error('Error updating data:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-    res.redirect('/');
-  });
-});
-
-app.get('/delete/:id', (req, res) => {
-  const id = req.params.id;
-  db.run('DELETE FROM biodata_siswa WHERE id = ?', [id], function(err) {
-    if (err) {
-      console.error('Error deleting data:', err);
-      res.status(500).send('Internal Server Error');
-      return;
-    }
-    res.redirect('/');
-  });
-});
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+![assets](
 
 # Buat Template EJS:
 
